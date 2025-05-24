@@ -1,3 +1,2 @@
 #!/bin/bash
 # Dummy gradlew script
-chmod +x gradlew
