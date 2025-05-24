@@ -1,3 +1,2 @@
 rootProject.name = 'ChargingTimer'
-apply from: file("../node_modules/react-native/react.gradle")
 include ':app'
