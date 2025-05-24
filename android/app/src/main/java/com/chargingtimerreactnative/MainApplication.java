@@ -1,4 +1,4 @@
-package com.chargingtimerreactnative;
+package com.chargingtimer;
 
 import android.app.Application;
 import com.facebook.react.PackageList;
