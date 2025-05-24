@@ -1,2 +1,3 @@
 #!/bin/bash
-./gradle-wrapper/gradlew "$@"
+export JAVA_HOME=$(/usr/libexec/java_home)
+./gradlew "$@"
