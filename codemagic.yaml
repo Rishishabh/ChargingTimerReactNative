@@ -11,6 +11,6 @@ workflows:
       - name: Build release APK
         script: |
           cd android
-          gradle assembleRelease
+          gradle assembleDebug
     artifacts:
       - android/app/build/outputs/**/*.apk
