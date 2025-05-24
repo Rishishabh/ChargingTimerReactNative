@@ -1,3 +1,3 @@
 #!/bin/bash
-export JAVA_HOME=$(/usr/libexec/java_home)
-./gradlew "$@"
+DIR="$(cd "$(dirname "$0")" && pwd)"
+"$DIR"/gradlew "$@"
