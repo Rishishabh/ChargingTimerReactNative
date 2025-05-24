@@ -7,7 +7,6 @@ workflows:
         PACKAGE_NAME: "com.chargingtimer"
       node: 18.16.0
       java: 17
-      android: sdk
     scripts:
       - npm install
       - cd android
