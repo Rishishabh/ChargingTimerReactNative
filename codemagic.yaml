@@ -10,6 +10,7 @@ workflows:
     scripts:
       - npm install
       - cd android
+      - ./gradlew assembleRelease
       - chmod +x android/gradlew
     artifacts:
       - android/app/build/outputs/release/*.apk
