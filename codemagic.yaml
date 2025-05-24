@@ -9,8 +9,8 @@ workflows:
       java: 17
     scripts:
       - npm install
-      - cd android
       - chmod +x gradlew
+      - cd android
       - ./gradlew assembleRelease
     artifacts:
       - android/app/build/outputs/release/*.apk
