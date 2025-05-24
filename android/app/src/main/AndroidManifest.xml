@@ -4,10 +4,9 @@
     <application
         android:name=".MainApplication"
         android:label="ChargingTimer"
-        android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@android:drawable/ic_dialog_info"
         android:allowBackup="true"
-        android:theme="@style/AppTheme">
+        android:theme="@android:style/Theme.Material">
         <activity
             android:name=".MainActivity"
             android:exported="true"
