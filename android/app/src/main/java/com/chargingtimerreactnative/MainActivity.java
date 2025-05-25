@@ -2,8 +2,8 @@ package com.chargingtimerreactnative;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactInstanceManager;
+import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        // Manually handle React Native lifecycle
         if (mReactInstanceManager != null) {
             mReactInstanceManager.onResume(this);
         }
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
+        // Manually handle React Native lifecycle
         if (mReactInstanceManager != null) {
             mReactInstanceManager.onPause(this);
         }
@@ -75,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        // Manually handle React Native lifecycle
         if (mReactInstanceManager != null) {
             mReactInstanceManager.onDestroy(this);
         }
