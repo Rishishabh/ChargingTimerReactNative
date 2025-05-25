@@ -1,12 +1,14 @@
 package com.chargingtimerreactnative;
 
 import android.os.Bundle;
+import com.facebook.react.ReactActivity;
 import androidx.appcompat.app.AppCompatActivity;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.chargingtimerreactnative.BuildConfig;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.UIManagerModule;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -16,24 +18,43 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private ReactInstanceManager mReactInstanceManager;
+    private ReactNativeHost mReactNativeHost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(R.style.AppTheme);  // Apply AppCompat theme
 
-        // Initialize the React Native instance
-        mReactInstanceManager = ReactInstanceManager.builder()
-                .setApplication(getApplication())
-                .setBundleAssetName("index.android.bundle")
-                .setJSMainModuleName("index")  // Your JS entry point
-                .setUseDeveloperSupport(BuildConfig.DEBUG)  // Use the debug settings
-                .setPackageName(getPackageName())
-                .addPackage(new MainReactPackage())  // Add necessary packages
-                .build();
+        // Initialize React Native Instance Manager
+        mReactNativeHost = new ReactNativeHost(getApplication()) {
+            @Override
+            public boolean getUseDeveloperSupport() {
+                return BuildConfig.DEBUG;  // Set to true in Debug mode
+            }
 
+            @Override
+            public List<ReactPackage> getPackages() {
+                return Arrays.<ReactPackage>asList(
+                        new MainReactPackage()  // Add necessary React packages here
+                );
+            }
+
+            @Override
+            public String getJSMainModuleName() {
+                return "index";  // Your JS entry point
+            }
+        };
+
+        // Initialize ReactInstanceManager with the ReactNativeHost
+        mReactInstanceManager = mReactNativeHost.getReactInstanceManager();
+
+        // SoLoader initialization
         SoLoader.init(this, /* native exopackage */ false);
-        setContentView(R.layout.activity_main);  // Set the content view
+
+        // Set content view here
+        setContentView(R.layout.activity_main);  // Ensure you have an activity_main.xml in res/layout
+
+        // Start React Activity (React Native setup)
+        mReactInstanceManager.createReactContextInBackground();
     }
 
     @Override
