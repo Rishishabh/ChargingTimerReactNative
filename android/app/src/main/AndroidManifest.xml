@@ -6,12 +6,12 @@
         android:label="ChargingTimer"
         android:icon="@android:drawable/ic_dialog_info"
         android:allowBackup="true"
-        android:theme="@android:style/Theme.Material">
+        android:theme="@style/Theme.ChargingTimer">
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:launchMode="singleTop"
-            android:theme="@android:style/Theme.Material"
+            android:theme=@style/Theme.ChargingTimer"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
