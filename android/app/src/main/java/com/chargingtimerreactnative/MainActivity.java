@@ -1,18 +1,12 @@
 package com.chargingtimerreactnative;
 
 import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
-import com.chargingtimerreactnative.BuildConfig;
-import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.uimanager.UIManagerModule;
-import com.facebook.react.bridge.JavaScriptModule;
-import androidx.appcompat.app.AppCompatActivity;
-import java.util.Arrays;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,42 +19,26 @@ public class MainActivity extends AppCompatActivity {
         // Initialize SoLoader for React Native
         SoLoader.init(this, false);
 
-        // Set the content view (Ensure activity_main.xml exists in res/layout)
+        // Set content view if necessary (you can skip this if your app doesn't have any XML layout)
         setContentView(R.layout.activity_main);
 
-        // Initialize ReactActivityDelegate for React Native lifecycle handling
+        // Initialize the ReactActivityDelegate, which will handle lifecycle automatically
         mReactActivityDelegate = new ReactActivityDelegate(this, getMainComponentName());
 
-        // Calling onCreate() on ReactActivityDelegate
+        // Call the ReactActivityDelegate's onCreate method
         mReactActivityDelegate.onCreate(savedInstanceState);
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        if (mReactActivityDelegate != null) {
-            mReactActivityDelegate.onResume();
+    public void onBackPressed() {
+        // Make sure that onBackPressed also works for React Native's navigation.
+        if (!mReactActivityDelegate.onBackPressed()) {
+            super.onBackPressed();
         }
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if (mReactActivityDelegate != null) {
-            mReactActivityDelegate.onPause();
-        }
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (mReactActivityDelegate != null) {
-            mReactActivityDelegate.onDestroy();
-        }
-    }
-
-    // Override to return your React Native JS entry point
+    // Override to return your React Native JS entry point (usually the name of your root component)
     protected String getMainComponentName() {
-        return "ChargingTimerReactNative"; // This is your JS entry point (usually index.js)
+        return "ChargingTimerReactNative"; // Ensure this matches the JS entry point
     }
 }
