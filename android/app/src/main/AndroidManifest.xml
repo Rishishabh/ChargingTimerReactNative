@@ -5,14 +5,13 @@
         android:name=".MainApplication"
         android:label="ChargingTimer"
         android:icon="@android:drawable/ic_dialog_info"
-        android:allowBackup="true"
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:launchMode="singleTop"
+            android:label="ChargingTimer"
             android:theme="@style/AppTheme"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
