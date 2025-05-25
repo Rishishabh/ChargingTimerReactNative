@@ -3,6 +3,7 @@ package com.chargingtimerreactnative;
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
 import androidx.appcompat.app.AppCompatActivity;
+import com.chargingtimerreactnative.R;
 
 public class MainActivity extends ReactActivity {
     @Override
