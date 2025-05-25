@@ -10,6 +10,7 @@
             android:name=".MainActivity"
             android:label="ChargingTimer"
             android:theme="@style/AppTheme"
+            android:exported="true"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize"
             android:launchMode="singleTask"
             android:windowSoftInputMode="adjustResize">
