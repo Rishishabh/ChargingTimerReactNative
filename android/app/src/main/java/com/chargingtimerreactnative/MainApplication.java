@@ -1,4 +1,4 @@
-package com.chargingtimer;
+package com.chargingtimerreactnative;
 
 import android.app.Application;
 import com.facebook.react.ReactApplication;
@@ -8,6 +8,7 @@ import com.facebook.soloader.SoLoader;
 import java.util.List;
 import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
+import com.chargingtimerreactnative.BuildConfig;
 
 public class MainApplication extends Application implements ReactApplication {
 
