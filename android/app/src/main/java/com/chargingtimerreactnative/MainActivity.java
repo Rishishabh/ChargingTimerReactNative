@@ -8,4 +8,9 @@ public class MainActivity extends ReactActivity {
     protected String getMainComponentName() {
         return "ChargingTimerReactNative"; // This should match your main component name
     }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 }
